@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camisetas Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Camisetas Generator</h1>
+    <p>Escribe el nombre de un futbolista o famoso y elige una camiseta o equipo.</p>
+    
+    <input type="text" id="futbolista" placeholder="Nombre del futbolista">
+    <input type="text" id="equipo" placeholder="Nombre del equipo o selección">
+    <button onclick="buscarCamiseta()">Buscar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function buscarCamiseta() {
+            let futbolista = document.getElementById("futbolista").value;
+            let equipo = document.getElementById("equipo").value;
+
+            if (futbolista === "" || equipo === "") {
+                alert("Por favor, completa ambos campos.");
+                return;
+            }
+
+            // Simulación de IA con texto
+            let resultado = document.getElementById("resultado");
+            resultado.innerHTML = `<h2>Generando imagen de ${futbolista} con la camiseta de ${equipo}...</h2>`;
+            
+            // Aquí podrías integrar una API de IA para generar la imagen
+            // Ejemplo: Llamar a una API de generación de imágenes como DALL·E, Stable Diffusion, etc.
+
+            setTimeout(() => {
+                resultado.innerHTML = `<h2>${futbolista} con la camiseta de ${equipo}</h2>
+                <img src="https://via.placeholder.com/300" alt="Imagen generada por IA">`;
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
